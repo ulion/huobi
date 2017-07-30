@@ -86,9 +86,9 @@ class Huobi {
    * @param {string} market 币种市场,人民币'cny',美元'usd'
    * @return {Promise}
    */
-  getNow({type='btc',market='cny'}){
+  getNow({type='btc',market='cny',dataType='ticker'}){
     let _market_ = market === 'cny' ? 'static' : 'usd'
-    let url = `http://api.huobi.com/${_market_}market/ticker_${type}_json.js`
+    let url = `http://api.huobi.com/${_market_}market/${dataType}_${type}_json.js`
 
     return Util.fetch(url)
   }
